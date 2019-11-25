@@ -12,4 +12,8 @@ Feature: Tests for Home screen functionality
     Then Show All button should be disabled
 
 
+  Scenario: Verify default conversion
+    Given I land on home screen
+    When I type "1" to target text field
+    Then I should see result as "12"
 

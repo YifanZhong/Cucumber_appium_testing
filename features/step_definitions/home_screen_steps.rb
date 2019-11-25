@@ -31,3 +31,11 @@ end
 #Then("Show All button should be disabled") do
   #puts("button is disabled")
 #end
+
+When(/^I type "([^"]*)" to target text field$/) do |target|
+  puts("target is " + target)
+end
+
+Then(/^I should see result as "([^"]*)"$/) do |result|
+  puts("result is #{result}")
+end
