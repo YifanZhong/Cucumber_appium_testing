@@ -15,8 +15,13 @@ Then("Right Unit picker value should be {string}") do |string|
   puts("Right unit picker value is " + string)
 end
 
-Then(/^Show All button should be (enabled|disabled)$/) do |status|
-  puts("button is " + status)
+Then(/^Show All button should be (enabled|disabled)$/) do |state|
+  if state == "enabled"
+    puts("button is enabled")
+  elsif state == "disabled"
+    puts("button is disabled")
+  end
+  #puts("button is " + state)
 end
 
 When("I press on Clear button") do
