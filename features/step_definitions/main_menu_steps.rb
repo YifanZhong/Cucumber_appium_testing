@@ -12,9 +12,9 @@ Then("I should see left side menu") do
 end
 
 When("I press on My conversions button") do
-  puts("My conversions button pressed")
+  text("My conversions").click
 end
 
 Then("I land on My conversions screen") do
-  puts("Landed on my conversions screen")
+  text("No personal conversion created yet")
 end
