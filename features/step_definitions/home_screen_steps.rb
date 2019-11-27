@@ -25,10 +25,15 @@ Then("Right Unit picker value should be {string}") do |value|
 end
 
 Then(/^Show All button should be (enabled|disabled)$/) do |state|
+  button_state = find_element(id:"btn_show_all").enabled?
   if state == "enabled"
-    puts("button is enabled")
+    if button_state != true
+      fail("Expected to be enabled")
+    end
   elsif state == "disabled"
-    puts("button is disabled")
+    if button_state != false
+      fail("Expected to be disabled")
+    end
   end
   #puts("button is " + state)
 end
@@ -41,7 +46,7 @@ end
   #puts("button is disabled")
 #end
 
-When(/^I type "([^"]*)" to target text field$/) do |target|
+When(/^I type "([^"]*)" on application keyboard$/) do |target|
   digits = target.split("")
   digits.each do |num|
     find_element(id:"keypad").find_element(xpath:"//android.widget.Button[@text='#{num}']").click
