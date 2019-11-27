@@ -64,7 +64,8 @@ end
 
 
 Then(/^I press on search icon$/) do
-  find_element(id:"action_search").click
+  find_element(id:"action_bar").find_element(id:"action_search").click
+  #find_element(id:"action_search").click
 end
 
 Then(/^I type "([^"]*)" in search field$/) do |text|
@@ -76,5 +77,5 @@ And(/^I press return button on soft keyboard$/) do
 end
 
 Then(/^I see "([^"]*)" as a current unit converter$/) do |current_unit|
-  text(current_unit)
+  find_element(id:"action_bar").find_element(xpath:"//android.widget.TextView[@text='#{current_unit}']")
 end
