@@ -27,13 +27,9 @@ end
 Then(/^Show All button should be (enabled|disabled)$/) do |state|
   button_state = find_element(id:"btn_show_all").enabled?
   if state == "enabled"
-    if button_state != true
-      fail("Expected to be enabled")
-    end
+    fail("Expected to be enabled") if button_state != true
   elsif state == "disabled"
-    if button_state != false
-      fail("Expected to be disabled")
-    end
+    fail("Expected to be disabled") if button_state != false
   end
   #puts("button is " + state)
 end
