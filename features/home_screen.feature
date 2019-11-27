@@ -18,16 +18,16 @@ Feature: Tests for Home screen functionality
     Given I land on home screen
     When I type "1" to target text field
     Then I should see result as "12"
-    @conversion
+    @conversion @wip7
   Scenario Outline: Verify default conversion
     Given I land on home screen
     When I type "<target>" to target text field
     Then I should see result as "<result>"
     Examples:
      |target|result|
-     |1     |12    |
-     |2     |24    |
-     |3     |36    |
+     |1     |30.48    |
+     |2     |60.96    |
+     |3     |91.44    |
 
       @wip3
   Scenario: User able to add current conversion to Favourites List

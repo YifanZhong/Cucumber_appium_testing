@@ -42,11 +42,14 @@ end
 #end
 
 When(/^I type "([^"]*)" to target text field$/) do |target|
-  puts("target is " + target)
+  find_element(id:"keypad").find_element(xpath:"//android.widget.Button[@text='#{target}']").click
 end
 
 Then(/^I should see result as "([^"]*)"$/) do |result|
-  puts("result is #{result}")
+  value = find_element(id:"target_value").text
+  if value != result
+    fail("Expected value is #{result}, actual value is #{value}")
+  end
 end
 
 
