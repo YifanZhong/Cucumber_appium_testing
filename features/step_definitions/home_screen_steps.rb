@@ -3,10 +3,10 @@
 # end
 
 Then("Left Unit picker value should be {string}") do |value|
-  actual_picker_text = find_element(id:"select_unit_spinner").text
+  actual_picker_text = find_elements(id:"select_unit_spinner")[0].text
 
   if actual_picker_text != value
-    fail("Expected unit picker value is #{value}, actual value is #{actual_picker_text}")
+    fail("Expected left unit picker value is #{value}, actual value is #{actual_picker_text}")
   end
 
 end
@@ -16,7 +16,12 @@ end
 # end
 
 Then("Right Unit picker value should be {string}") do |value|
-  puts("Right unit picker value is " + value)
+  array_of_elements = find_elements(id:"select_unit_spinner")
+  actual_picker_text = array_of_elements[1].text
+
+  if actual_picker_text != value
+    fail("Expected right unit picker value is #{value}, actual value is #{actual_picker_text}")
+  end
 end
 
 Then(/^Show All button should be (enabled|disabled)$/) do |state|
