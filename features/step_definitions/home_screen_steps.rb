@@ -39,3 +39,16 @@ end
 Then(/^I should see result as "([^"]*)"$/) do |result|
   puts("result is #{result}")
 end
+
+
+When(/^I press on Add to Favourites icon$/) do
+  find_element(id:"action_add_favorites").click
+end
+
+Then(/^I press on Favourite Conversions$/) do
+  text("Favorite conversions").click
+end
+
+And(/^I verify "([^"]*)" added to Favourite conversions list$/) do |unit_type|
+  text(unit_type)
+end

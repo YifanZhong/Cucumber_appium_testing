@@ -28,3 +28,11 @@ Feature: Tests for Home screen functionality
      |1     |12    |
      |2     |24    |
      |3     |36    |
+
+      @wip3
+  Scenario: User able to add current conversion to Favourites List
+    Given I land on home screen
+    When I press on Add to Favourites icon
+    When I press on menu icon
+    Then I press on Favourite Conversions
+    And I verify "Length" added to Favourite conversions list
