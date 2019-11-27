@@ -42,7 +42,10 @@ end
 #end
 
 When(/^I type "([^"]*)" to target text field$/) do |target|
-  find_element(id:"keypad").find_element(xpath:"//android.widget.Button[@text='#{target}']").click
+  digits = target.split("")
+  digits.each do |num|
+    find_element(id:"keypad").find_element(xpath:"//android.widget.Button[@text='#{num}']").click
+  end
 end
 
 Then(/^I should see result as "([^"]*)"$/) do |result|

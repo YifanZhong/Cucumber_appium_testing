@@ -28,6 +28,8 @@ Feature: Tests for Home screen functionality
      |1     |30.48    |
      |2     |60.96    |
      |3     |91.44    |
+     |10    |304.8    |
+     |1011  |30 815.28 |
 
       @wip3
   Scenario: User able to add current conversion to Favourites List
