@@ -48,8 +48,12 @@ Feature: Tests for Home screen functionality
 
 
      @wip9
-  Scenario: User able to select values from unit pickers
+  Scenario Outline: User able to select values from unit pickers
     Given I land on home screen
-    Then I select "Inch" from left unit picker
-    When I type "1" on application keyboard
-    Then I should see result as "2.54"
+    Then I select "<unit_type>" from left unit picker
+    When I type "<amount>" on application keyboard
+    Then I should see result as "<result>"
+       Examples:
+         |unit_type| amount | result |
+         | Inch    |1       |2.54    |
+         |Link     |1       |20.1168 |
