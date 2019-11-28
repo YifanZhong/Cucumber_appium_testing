@@ -89,3 +89,8 @@ end
 Then(/^I see "([^"]*)" as a current unit converter$/) do |current_unit|
   find_element(id:"action_bar").find_element(xpath:"//android.widget.TextView[@text='#{current_unit}']")
 end
+
+Then(/^I select "([^"]*)" from left unit picker$/) do |value|
+  find_elements(id:"select_unit_spinner")[0].click
+  text(value).click
+end
