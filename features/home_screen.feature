@@ -1,22 +1,26 @@
 @home_screen
 Feature: Tests for Home screen functionality
+
+  Background:
+    Given I land on home screen
+
   @default
   Scenario: Default values on Home screen is Foot and Centimeter
-    Given I land on home screen
+    #Given I land on home screen
     Then Left Unit picker value should be "Foot"
     Then Left Unit picker value should be "Inch"
     And Right Unit picker value should be "Centimeter"
 
     @wip7
   Scenario: Show All button enabled at launch
-    Given I land on home screen
+    #Given I land on home screen
     Then Show All button should be disabled
     When I type "1" on application keyboard
     Then Show All button should be enabled
 
     @conversion
   Scenario Outline: Verify default conversion
-    Given I land on home screen
+    #Given I land on home screen
     When I type "<target>" on application keyboard
     Then I should see result as "<result>"
     Examples:
@@ -29,7 +33,7 @@ Feature: Tests for Home screen functionality
 
       @wip3
   Scenario: User able to add current conversion to Favourites List
-    Given I land on home screen
+    #Given I land on home screen
     When I press on Add to Favourites icon
     When I press on menu icon
     Then I press on Favourite Conversions
@@ -38,7 +42,7 @@ Feature: Tests for Home screen functionality
 
         @wip6
   Scenario: User able to search by existing Conversion type
-    Given I land on home screen
+    #Given I land on home screen
     Then I press on search icon
     Then I type "Temperature" in search field
     And I press return button on soft keyboard
@@ -48,7 +52,7 @@ Feature: Tests for Home screen functionality
 
 
   Scenario Outline: User able to select values from unit pickers
-    Given I land on home screen
+    #Given I land on home screen
     Then I select "<unit_type>" from left unit picker
     When I type "<amount>" on application keyboard
     Then I should see result as "<result>"
@@ -60,7 +64,7 @@ Feature: Tests for Home screen functionality
 
 
   Scenario: User able to convert values
-    Given I land on home screen
+    #Given I land on home screen
     When I press on menu icon
     Then I select "Volume" from menu
     Then I select "Cup" from right unit picker
@@ -68,7 +72,7 @@ Feature: Tests for Home screen functionality
     Then I should see result as "15.1416"
     @wip9
   Scenario: User able to switch values
-    Given I land on home screen
+    #Given I land on home screen
     Then Left Unit picker value should be "Foot"
     And Right Unit picker value should be "Centimeter"
     When I press on switch button
