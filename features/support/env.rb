@@ -32,5 +32,5 @@ def find_in_list(value)
   else
     fail("Cannot find element with text #{value}")
   end
-  
+
 end

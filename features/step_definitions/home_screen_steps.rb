@@ -116,3 +116,7 @@ Then(/^I select "([^"]*)" from right unit picker$/) do |value|
 
   #text(value).click
 end
+
+When(/^I press on switch button$/) do
+  find_element(id:"img_switch").click
+end
