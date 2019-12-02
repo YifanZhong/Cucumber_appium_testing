@@ -50,7 +50,7 @@ Feature: Tests for Home screen functionality
     Then Left Unit picker value should be "Celsius"
     And Right Unit picker value should be "Fahrenheit"
 
-
+  @wip9
   Scenario Outline: User able to select values from unit pickers
     #Given I land on home screen
     Then I select "<unit_type>" from left unit picker
@@ -70,7 +70,7 @@ Feature: Tests for Home screen functionality
     Then I select "Cup" from right unit picker
     When I type "1" on application keyboard
     Then I should see result as "15.1416"
-    @wip9
+
   Scenario: User able to switch values
     #Given I land on home screen
     Then Left Unit picker value should be "Foot"
