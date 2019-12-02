@@ -20,3 +20,7 @@ After do |scenario|
   $driver.driver_quit
   puts "After hook is executed"
 end
+
+AfterConfiguration do
+  FileUtils.rm_r("screenshots")if File.directory?("screenshots")
+end
