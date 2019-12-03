@@ -120,3 +120,23 @@ end
 When(/^I press on switch button$/) do
   find_element(id:"img_switch").click
 end
+
+
+Then(/^I should see text "([^"]*)"$/) do |value|
+  text(value)
+end
+
+And(/^I verify that (\d+)(?:st|nd|rd|th)? result in history list is "([^"]*)"$/) do |index,text|
+  parent_element = find_element(id:"history_conversion_list")
+  array_of_elements = parent_element.find_elements(id:"history_single_line")
+  actual_text = array_of_elements[index.to_i - 1].find_element(id:"history_item_hint").text
+  if actual_text != text
+    fail("Expected text is #{text}, actual text is #{actual_text}")
+  end
+end
+
+When(/^I press delete from history at (\d+)(?:st|nd|rd|th)? row$/) do |index|
+  parent_element = find_element(id:"history_conversion_list")
+  array_of_elements = parent_element.find_elements(id:"history_single_line")
+  array_of_elements[index.to_i - 1].find_element(id:"deleteIcon").click
+end
