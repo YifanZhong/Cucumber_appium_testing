@@ -140,3 +140,4 @@ When(/^I press delete from history at (\d+)(?:st|nd|rd|th)? row$/) do |index|
   array_of_elements = parent_element.find_elements(id:"history_single_line")
   array_of_elements[index.to_i - 1].find_element(id:"deleteIcon").click
 end
+

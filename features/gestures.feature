@@ -1,3 +1,4 @@
+@gestures
 Feature: User able to use gestures
 
   Scenario: User able to swipe to open Left side menu
@@ -6,3 +7,5 @@ Feature: User able to use gestures
     Then I should see left side menu
     Then When I swipe from right to left
     And I see "Length" as a current unit converter
+
+    
